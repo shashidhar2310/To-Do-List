@@ -19,7 +19,6 @@ body {
     background: radial-gradient(ellipse at top left, #1a1a2e 0%, #0a0a0a 70%);
 }
 
-/* Sidebar */
 .sidebar {
     width: 280px;
     min-width: 280px;
@@ -110,7 +109,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Main Content */
 .main-content {
     flex: 1;
     padding: 32px;
@@ -129,7 +127,6 @@ body {
     border-radius: 3px;
 }
 
-/* Tab System */
 .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
 .tab-content.active { display: block; }
 
@@ -138,7 +135,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -187,7 +183,6 @@ body {
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
-/* Tasks */
 .tasks-section { display: flex; flex-direction: column; gap: 16px; }
 
 .task-item {
@@ -261,7 +256,6 @@ body {
     white-space: nowrap;
 }
 
-/* Delete Button */
 .delete-task-btn {
     margin-left: auto;
     width: 32px;
@@ -286,7 +280,6 @@ body {
     box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
-/* Timer */
 .timer-container {
     max-width: 500px;
     margin: 0 auto;
@@ -372,7 +365,6 @@ body {
     text-align: center;
 }
 
-/* Calendar */
 .calendar-container {
     max-width: 800px;
     margin: 0 auto;
@@ -471,7 +463,6 @@ body {
     50% { opacity: 0.5; transform: scale(1.2); }
 }
 
-/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -562,7 +553,6 @@ body {
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-/* Notifications */
 .notification {
     position: fixed;
     top: 24px;
@@ -581,7 +571,6 @@ body {
 
 .notification.show { right: 24px; }
 
-/* Responsive */
 @media (max-width: 768px) {
     .app-container { flex-direction: column; }
     .sidebar {
