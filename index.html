@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Task Manager Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="data:application/manifest+json,{
+        'name': 'Task Manager Pro',
+        'short_name': 'Tasks',
+        'start_url': '.',
+        'display': 'standalone',
+        'background_color': '#0a0a0a',
+        'theme_color': '#667eea'
+    }">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="greeting">
+                <h1 id="greeting-text">Good Afternoon</h1>
+                <p>What's your plan for today?</p>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item active" data-tab="tasks">
+                    <span class="icon">📝</span> Tasks
+                </li>
+                <li class="nav-item" data-tab="timer">
+                    <span class="icon">⏱️</span> Timer
+                </li>
+                <li class="nav-item" data-tab="calendar">
+                    <span class="icon">📅</span> Calendar
+                </li>
+                <li class="nav-item" data-tab="reminders">
+                    <span class="icon">🔔</span> Reminders
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Tasks Tab -->
+            <div id="tasks-tab" class="tab-content active">
+                <div class="header">
+                    <h2>Today's Tasks</h2>
+                    <div class="header-actions">
+                        <select id="category-select" class="category-filter">
+                            <option>All</option>
+                            <option>Work</option>
+                            <option>Personal</option>
+                            <option>Urgent</option>
+                        </select>
+                        <button class="add-task-btn" id="add-task-btn">+ Add Task</button>
+                    </div>
+                </div>
+                <div class="tasks-section" id="tasks-list">
+                    <!-- Dynamic tasks -->
+                </div>
+            </div>
+
+            <!-- Timer Tab -->
+            <div id="timer-tab" class="tab-content">
+                <div class="timer-container">
+                    <div class="timer-display" id="timer-display">25:00</div>
+                    <div class="timer-controls">
+                        <button class="timer-btn large" id="start-timer">Start</button>
+                        <button class="timer-btn" id="pause-timer">Pause</button>
+                        <button class="timer-btn" id="reset-timer">Reset</button>
+                    </div>
+                    <div class="timer-settings">
+                        <label>Work: <input type="number" id="work-min" value="25" min="1"> min</label>
+                        <label>Break: <input type="number" id="break-min" value="5" min="1"> min</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Tab -->
+            <div id="calendar-tab" class="tab-content">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month">&lt;</button>
+                        <span id="month-year">February 2026</span>
+                        <button id="next-month">&gt;</button>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+            </div>
+
+            <!-- Reminders Tab -->
+            <div id="reminders-tab" class="tab-content">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <button class="add-task-btn" id="add-reminder-btn">+ New Reminder</button>
+                </div>
+                <div id="reminders-list">
+                    <!-- Dynamic reminders -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task/Reminder Modal -->
+    <div class="modal" id="task-modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Add Task</h3>
+            <input type="text" id="task-input" placeholder="Enter task name...">
+            <select id="task-category">
+                <option>Work</option>
+                <option>Personal</option>
+                <option>Urgent</option>
+            </select>
+            <input type="datetime-local" id="task-date">
+            <div class="modal-actions">
+                <button id="cancel-task">Cancel</button>
+                <button id="save-task">Save Task</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
