@@ -122,7 +122,7 @@ class TaskManager {
                 <span class="task-time">${this.formatTimeAgo(task.created)}</span>
             `;
             
-            // AUTO-DELETE ON CHECK ✅
+            
             const checkbox = taskDiv.querySelector('input[type="checkbox"]');
             checkbox.addEventListener('change', () => {
                 if (checkbox.checked) {
@@ -133,7 +133,7 @@ class TaskManager {
                 }
             });
 
-            // Manual delete button
+         
             const deleteBtn = document.createElement('button');
             deleteBtn.className = 'delete-task-btn';
             deleteBtn.innerHTML = '×';
